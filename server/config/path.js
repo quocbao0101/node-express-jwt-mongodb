@@ -4,6 +4,8 @@
         * @swagger
         * /api/users:
         *   get:
+        *    security: 
+        *       - bearerAuth: []
         *    tags:
         *    - user-controller
         *    responses:
@@ -21,6 +23,8 @@
         * @swagger
         * /api/users/{id}:
         *  get:
+        *    security: 
+        *       - bearerAuth: []
         *    tags:
         *    - user-controller
         *    parameters:
@@ -41,6 +45,8 @@
         * @swagger
         * /api/users:
         *  post:
+        *    security: 
+        *       - bearerAuth: []
         *    tags:
         *    - user-controller
         *    requestBody:
@@ -63,6 +69,8 @@
         * @swagger
         * /api/users:
         *  delete:
+        *    security: 
+        *       - bearerAuth: []
         *    tags:
         *    - user-controller
         *    requestBody:
@@ -123,3 +131,4 @@
         *             schema:
         *              $ref: '#/components/schemas/CreateUserInput'
     */
+   

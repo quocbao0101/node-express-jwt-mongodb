@@ -6,7 +6,7 @@ const userController = {
         try {
             const newUser = new User(req.body);
             const saveUser = await newUser.save();
-            res.status(200).json(saveUser);
+            res.status(200).json({status: 'Success',data: saveUser});
         } catch (error) {
             console.log(error);
             res.status(500).json(error);
@@ -15,7 +15,7 @@ const userController = {
     getUser: async(req, res) => {
         try {
             const users = await User.find();
-            res.status(200).json(users);
+            res.status(200).json({status: 'Success',data: users});
         } catch (error) {
             res.status(500).json(error);
         }
@@ -23,8 +23,10 @@ const userController = {
     getUserbyID: async(req, res) => {
         try {
             const { id } = req.params;
-            const user = await User.findById(id);
-            res.status(200).json(user);
+            User.findById(id, (err, user) => {
+                if(err) { return res.status(404).json({status: 'error', message: 'Not found'}) }
+                if(user) res.status(200).json({status: 'Success',data: users});
+            });
         } catch (error) {
             res.status(500).json(error);
         }
@@ -34,7 +36,7 @@ const userController = {
             const value = req.body;
             console.log(await User.deleteMany({ _id: {$in: value}}));
             const users = await User.find();
-            res.status(200).json(users);
+            res.status(200).json({status: 'Success',data: users});
         } catch (error) {
             res.status(500).json(error);
         }

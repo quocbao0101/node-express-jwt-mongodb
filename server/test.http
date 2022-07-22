@@ -1,0 +1,11 @@
+GET http://localhost:5000/api/users HTTP/1.1
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoicXVvY2JhbzAxIiwiaWF0IjoxNjU4NDc1MzE3LCJleHAiOjE2NTg0NzUzNzd9.TQuRzCND1fMQYm1hR7cBERQAtyGvqYX4CXZcnLVcwZs
+###
+
+POST http://localhost:5000/api/signin HTTP/1.1
+content-type: application/json
+
+{
+    "username": "quocbao01",
+    "password": "145632"
+}

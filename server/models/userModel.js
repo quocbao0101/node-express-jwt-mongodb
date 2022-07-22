@@ -30,6 +30,9 @@ const { Schema } = mongoose;
             },
             role: {
                 type: String,
+            },
+            access_token: {
+                type: String,
             }
         },
         {

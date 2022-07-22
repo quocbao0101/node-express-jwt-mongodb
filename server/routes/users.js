@@ -1,14 +1,15 @@
 import express from 'express';
 
 import userController from '../controllers/userController.js';
+import authenticateToken from '../middlewares/authen.js';
 const router = express.Router();
 
-    router.get("/", userController.getUser);
+    router.get("/",authenticateToken, userController.getUser);
 
-    router.get("/:id", userController.getUserbyID);
+    router.get("/:id",authenticateToken, userController.getUserbyID);
 
-    router.post("/", userController.addUser);
+    router.post("/",authenticateToken, userController.addUser);
 
-    router.delete("/", userController.deleteUser);
+    router.delete("/",authenticateToken, userController.deleteUser);
 
 export default router;

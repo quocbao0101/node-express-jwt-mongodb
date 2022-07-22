@@ -1,5 +1,6 @@
 import { User } from "../models/userModel.js";
-import bcrypt, { hash } from 'bcrypt';
+import bcrypt from 'bcrypt';
+import { generateAccessToken } from "../middlewares/authen.js";
 
 
 const authController = {
@@ -11,7 +12,7 @@ const authController = {
             {
                 if(user) {
                     res.status(400).json({
-                        status: 400,
+                        status: 404,
                         message: 'User has been used'
                     });
                 }
@@ -22,8 +23,8 @@ const authController = {
                         user.role = 'Admin';
                         user.password = hash;
                         user.save((err, result) => {
-                            if(err) { return res.status(400).json({err}) }
-                            res.status(200).json({user: result});
+                            if(err) { return res.status(404).json({err}) }
+                            res.status(200).json({data: result});
                         })
                     });
                 }
@@ -36,13 +37,25 @@ const authController = {
         try {
             const username = req.body.username;
             const password = req.body.password;
-            User.findOne({username: username, password: password}, (error, user) => {
-                if(user) {
-                    res.status(200).json(user);
+            User.findOne({username: username}, (error, data) => {
+                if(data) {
+                    if(bcrypt.compareSync(password, data.password)) {
+                        data.access_token = generateAccessToken(username);
+                        res.status(200).json({
+                            status: 'success',
+                            data
+                        });   
+                    }
+                    else {
+                        res.status(404).json({                
+                        status: 404,
+                        message: 'Please check user and password'
+                        })
+                    }
                 }
                 else {
-                    res.status(400).json({                
-                    status: 400,
+                    res.status(404).json({                
+                    status: 404,
                     message: 'Please check user and password'
                     })
                 }
