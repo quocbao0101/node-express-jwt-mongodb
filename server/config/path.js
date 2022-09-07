@@ -88,6 +88,79 @@
         *              $ref: '#/components/schemas/CreateUserInput'
         */
 
+
+    // Category
+        /**
+        * @swagger
+        * /api/category:
+        *  get:
+        *    security: 
+        *       - bearerAuth: []
+        *    tags:
+        *    - category-controller
+        *    responses:
+        *      '200':
+        *        description: OK
+    */
+           // ADD Category
+        /**
+        * @swagger
+        * /api/category:
+        *  post:
+        *    security: 
+        *       - bearerAuth: []
+        *    tags:
+        *    - category-controller
+        *    requestBody:
+        *       required: true
+        *       content:
+        *           application/json:
+        *               schema:
+        *                   $ref: '#/components/schemas/CreateMenuInput'
+        *    responses:
+        *      '200':
+        *        description: OK
+        *        content:
+        *           application/json:
+        *             schema:
+        *              $ref: '#/components/schemas/CreateMenuInput'
+        */
+    // Menu
+    /**
+        * @swagger
+        * /api/menu:
+        *  get:
+        *    security: 
+        *       - bearerAuth: []
+        *    tags:
+        *    - menu-controller
+        *    responses:
+        *      '200':
+        *        description: OK
+    */
+        // ADD MENU
+        /**
+        * @swagger
+        * /api/menu:
+        *  post:
+        *    security: 
+        *       - bearerAuth: []
+        *    tags:
+        *    - menu-controller
+        *    requestBody:
+        *       required: true
+        *       content:
+        *           application/json:
+        *               schema:
+        *                   $ref: '#/components/schemas/CreateMenuInput'
+        *    responses:
+        *      '200':
+        *        description: OK
+        *        content:
+        *           application/json:
+        *             schema:
+        *              $ref: '#/components/schemas/CreateMenuInput'
+        */
     // Auth
 
     /**

@@ -30,6 +30,20 @@
      * @swagger
      * components:
      *  schemas:
+     *      CreateMenuInput:
+     *          required:
+     *              - name
+     *              - image
+     *          properties:
+     *              name:
+     *                  type: string
+     *              image:
+     *                  type: string
+     */
+    /**
+     * @swagger
+     * components:
+     *  schemas:
      *      DeleteUserInput:
      *          type: array
      *          items:

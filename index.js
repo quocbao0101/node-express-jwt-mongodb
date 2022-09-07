@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 import logger from 'morgan';
 import usersRouter from './server/routes/users.js';
 import authRouter from './server/routes/auth.js';
+import menuRouter from './server/routes/menu.js';
+import categoryRouter from './server/routes/category.js';
 import cors from 'cors';
 import 'dotenv/config'
 import express from 'express'
@@ -46,6 +48,8 @@ app.use(bodyParser.json());
 // load router
 app.use("/api/users", usersRouter);
 app.use("/api", authRouter)
+app.use("/api/menu", menuRouter);
+app.use("/api/category", categoryRouter);
 
 
 app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`))

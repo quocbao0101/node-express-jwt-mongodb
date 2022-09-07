@@ -1,5 +1,5 @@
 GET http://localhost:5000/api/users HTTP/1.1
-Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoicXVvY2JhbzAxIiwiaWF0IjoxNjU4NDc1MzE3LCJleHAiOjE2NTg0NzUzNzd9.TQuRzCND1fMQYm1hR7cBERQAtyGvqYX4CXZcnLVcwZs
+Authorization: Beaer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoicXVvY2JhbzAxIiwiaWF0IjoxNjU4NDc4NTY2LCJleHAiOjE2NTg0Nzg1OTZ9.7o4kNSZ49buxZ9r22NR5kLLiOXKCBjfq3xk_yAK8mXE
 ###
 
 POST http://localhost:5000/api/signin HTTP/1.1

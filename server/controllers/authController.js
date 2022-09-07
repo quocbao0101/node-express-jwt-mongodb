@@ -40,7 +40,8 @@ const authController = {
             User.findOne({username: username}, (error, data) => {
                 if(data) {
                     if(bcrypt.compareSync(password, data.password)) {
-                        data.access_token = generateAccessToken(username);
+                        const {token, refreshToken} = generateAccessToken(username);
+                        data.access_token = token;
                         res.status(200).json({
                             status: 'success',
                             data

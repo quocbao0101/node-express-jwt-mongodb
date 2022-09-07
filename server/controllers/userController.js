@@ -25,7 +25,7 @@ const userController = {
             const { id } = req.params;
             User.findById(id, (err, user) => {
                 if(err) { return res.status(404).json({status: 'error', message: 'Not found'}) }
-                if(user) res.status(200).json({status: 'Success',data: users});
+                if(user) res.status(200).json({status: 'Success',data: user});
             });
         } catch (error) {
             res.status(500).json(error);
