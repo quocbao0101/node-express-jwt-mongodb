@@ -9,3 +9,12 @@ content-type: application/json
     "username": "quocbao01",
     "password": "145632"
 }
+
+
+POST http://localhost:5000/api/products HTTP/1.1
+content-type: application/json
+
+{
+    "page": "0",
+    "pageSize": "10"
+}

@@ -3,7 +3,7 @@
      * components:
      *   schemas:
      *      CreateUserInput:
-     *          type:   object
+     *          type: object
      *          required:
      *              - username
      *              - password
@@ -85,4 +85,58 @@
      *   responses:
      *      UnauthorizedError:
      *       description: Access token is missing or invalid
+     */
+
+
+    /**
+     * @swagger
+     * components:
+     *  schemas:
+     *      PaginationInput:
+     *          required: 
+     *              - page
+     *              - pageSize
+     *          properties:
+     *              page:
+     *                  type: number
+     *              pageSize:
+     *                  type: number
+     */
+    /**
+     * @swagger
+     * components:
+     *  schemas:
+     *      ProductsInput:
+     *          required:
+     *              - name
+     *              - category
+     *              - price
+     *              - discount
+     *              - qty
+     *              - image
+     *              - noti
+     *              - contact
+     *          properties:
+     *              name:
+     *                  type: string
+     *              category:
+     *                  type: object
+     *                  items:
+     *                  properties:
+     *                      name:
+     *                          type: string
+     *                      tag:
+     *                          type: string
+     *              price:
+     *                  type: number
+     *              discount: 
+     *                  type: number
+     *              qty:
+     *                  type: number
+     *              image: 
+     *                  type: string
+     *              noti:
+     *                  type: string
+     *              contact:
+     *                  type: boolean
      */

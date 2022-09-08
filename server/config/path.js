@@ -204,4 +204,47 @@
         *             schema:
         *              $ref: '#/components/schemas/CreateUserInput'
     */
+
+
+
+    /**
+     * @swagger
+     * /api/products:
+        *  post:
+        *    tags:
+        *    - products-controller
+        *    requestBody:
+        *       required: true
+        *       content:
+        *           application/json:
+        *               schema:
+        *                   $ref: '#/components/schemas/ProductsInput'
+        *    responses:
+        *      '200':
+        *        description: OK
+        *        content:
+        *           application/json:
+        *             schema:
+        *              $ref: '#/components/schemas/ProductsInput'
+    */
+   /**
+    * @swagger
+    * /api/products/pagination:
+    *   post:
+        *    tags:
+        *    - products-controller
+        *    requestBody:
+        *       required: true
+        *       content:
+        *           application/json:
+        *               schema:
+        *                   $ref: '#/components/schemas/PaginationInput'
+        *    responses:
+        *      '200':
+        *        description: OK
+        *        content:
+        *           application/json:
+        *             schema:
+        *              $ref: '#/components/schemas/ProductsInput'     
+    */
    
