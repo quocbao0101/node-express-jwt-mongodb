@@ -1,7 +1,7 @@
 import { Product } from "../models/productModel.js";
 
 const productController = {
-    getProduct: async(req, res, next) => {
+    getProductPagination: async(req, res, next) => {
         const page = parseInt(req.body.page);
         const pageSize = parseInt(req.body.pageSize);
         const sortPrice = req.body.sort.price;
@@ -38,6 +38,14 @@ const productController = {
                         });
                     })
                 })
+    },
+    getProduct: async(req, res) => {
+        try {
+            const product = await Product.find();
+            res.status(200).json(product); 
+        } catch (error) {
+            res.status(500).json(error);
+        }
     },
     addProduct: async(req, res) => {
         try {

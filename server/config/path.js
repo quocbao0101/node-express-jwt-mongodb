@@ -247,4 +247,19 @@
         *             schema:
         *              $ref: '#/components/schemas/ProductsInput'     
     */
+
+   /**
+    * @swagger
+    * /api/products:
+    *   get:
+    *    tags:
+    *    - products-controller  
+    *    responses:
+    *      '200':
+    *        description: OK
+    *        content:
+    *           application/json:
+    *             schema:
+    *              $ref: '#/components/schemas/ProductsInput'     
+    */
    
