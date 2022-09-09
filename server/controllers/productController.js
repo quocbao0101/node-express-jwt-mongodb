@@ -4,14 +4,17 @@ const productController = {
     getProduct: async(req, res, next) => {
         const page = parseInt(req.body.page);
         const pageSize = parseInt(req.body.pageSize);
+        const sortPrice = req.body.sort.price;
         const inPrice = req.body.inPrice
-
-            await Product.find({price: { $in: inPrice}}).select('')
+        let number;
+        if(sortPrice === 'desc') {
+            number = -1;
+        } else number = 1;
+            await Product.find().select('')
                 .limit(pageSize)
                 .skip(pageSize * page)
                 .sort({
-
-                    name: 'asc'
+                    price: number,
                 })
                 .exec(function(err, data) 
                 {
@@ -23,6 +26,9 @@ const productController = {
                             totalElements: data.length,
                             totalData: page,
                             totalPages: Math.round(page / pageSize),
+                            sort: {
+                                price: sortPrice === 'desc' ? 'desc' : 'asc',
+                            },
                             data: data,
                         });
                     })

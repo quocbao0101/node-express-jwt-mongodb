@@ -102,8 +102,16 @@
      *                  type: number
      *              pageSize:
      *                  type: number
+     *              sort:
+     *                  type: object
+     *                  items:
+     *                  properties:
+     *                      price: 
+     *                          type: string
      *              inPrice:
      *                  type: array
+     *                  items:
+     *                      type: integer
      */
     /**
      * @swagger
