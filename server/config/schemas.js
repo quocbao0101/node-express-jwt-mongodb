@@ -102,6 +102,12 @@
      *                  type: number
      *              pageSize:
      *                  type: number
+     *              filter:
+     *                  type: object
+     *                  items:
+     *                  properties:
+     *                      name:
+     *                          type: string
      *              sort:
      *                  type: object
      *                  items:
