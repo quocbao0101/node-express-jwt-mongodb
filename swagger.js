@@ -10,7 +10,7 @@ export const swaggerOptions = {
     //     url: `http://computershop1234.herokuapp.com`
     //   }
     // ],
-    host: 'computershop1234.herokuapp.com',
+    host: 'computershop0101.herokuapp.com',
     schemes: ['http'],
     components: {
       securitySchemes: {
