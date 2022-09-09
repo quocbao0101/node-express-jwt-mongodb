@@ -7,7 +7,7 @@ export const swaggerOptions = {
     },
     servers: [
       {
-        url: `http://computershop1234.herokuapp.com:${process.env.PORT || 3000}`
+        url: `http://computershop1234.herokuapp.com`
       }
     ],
     // host: 'computershop1234.herokuapp.com',
