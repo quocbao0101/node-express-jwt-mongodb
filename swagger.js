@@ -7,7 +7,7 @@ export const swaggerOptions = {
     },
     // servers: [
     //   {
-    //     url: `http://computershop1234.herokuapp.com`
+    //     url: `computershop0101.herokuapp.com`
     //   }
     // ],
     host: 'computershop0101.herokuapp.com',
