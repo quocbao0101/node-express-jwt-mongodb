@@ -4,11 +4,13 @@ const productController = {
     getProduct: async(req, res, next) => {
         const page = parseInt(req.body.page);
         const pageSize = parseInt(req.body.pageSize);
+        const inPrice = req.body.inPrice
 
-            await Product.find().select('')
+            await Product.find({price: { $in: inPrice}}).select('')
                 .limit(pageSize)
                 .skip(pageSize * page)
                 .sort({
+
                     name: 'asc'
                 })
                 .exec(function(err, data) 
@@ -26,7 +28,6 @@ const productController = {
                     })
                 })
     },
-
     addProduct: async(req, res) => {
         try {
             const product = new Product(req.body);

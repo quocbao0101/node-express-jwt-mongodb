@@ -96,11 +96,14 @@
      *          required: 
      *              - page
      *              - pageSize
+     *              - inPrice
      *          properties:
      *              page:
      *                  type: number
      *              pageSize:
      *                  type: number
+     *              inPrice:
+     *                  type: array
      */
     /**
      * @swagger
