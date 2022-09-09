@@ -16,6 +16,7 @@ const authController = {
                     });
                 }
                 else {
+                        if(err) { return next(err);}
                         const user = new User(req.body);
                         user.role = 'Admin';
                         user.password = req.body.password;
@@ -23,7 +24,7 @@ const authController = {
                             if(err) { return res.status(404).json({err}) }
                             res.status(200).json({data: result});
                         })
-                    }
+                }
             })
         } catch (error) {
             res.status(500).json(error);
