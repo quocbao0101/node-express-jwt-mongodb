@@ -54,4 +54,4 @@ app.use("/api/category", categoryRouter);
 app.use("/api/products", productRouter);
 
 
-app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`))
+app.listen((PORT || 3000), () => console.log(`Server running on port: http://localhost:${PORT}`))
