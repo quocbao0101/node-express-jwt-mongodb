@@ -2,14 +2,14 @@ export const swaggerOptions = {
   definition: {
     openapi: '3.0.3',
     info: {
-      title:'Users Management API',
+      title:'Shop Management API',
       version:'snapshot',
     },
-    servers: [
-      {
-        url: `http://localhost:${process.env.PORT || 3000}`
-      }
-    ],
+    // servers: [
+    //   {
+    //     url: `http://localhost:${process.env.PORT || 3000}`
+    //   }
+    // ],
     host: 'computershop1234.herokuapp.com',
     schemes: ['http'],
     components: {
