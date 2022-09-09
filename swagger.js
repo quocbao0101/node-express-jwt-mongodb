@@ -5,13 +5,13 @@ export const swaggerOptions = {
       title:'Shop Management API',
       version:'snapshot',
     },
-    // servers: [
-    //   {
-    //     url: `http://localhost:${process.env.PORT || 3000}`
-    //   }
-    // ],
-    host: 'computershop1234.herokuapp.com',
-    schemes: ['http'],
+    servers: [
+      {
+        url: `http://computershop1234.herokuapp.com:${process.env.PORT || 3000}`
+      }
+    ],
+    // host: 'computershop1234.herokuapp.com',
+    // schemes: ['http'],
     components: {
       securitySchemes: {
         bearerAuth: {
