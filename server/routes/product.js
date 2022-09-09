@@ -4,7 +4,7 @@ import productController from '../controllers/productController.js';
 import authenticateToken from '../middlewares/authen.js';
 const router = express.Router();
 
-    router.post("/pagination", productController.getProduct);
+    router.post("/pagination", productController.getProductPagination);
     router.post("/", productController.addProduct);
     router.get("/", productController.getProduct);
 
