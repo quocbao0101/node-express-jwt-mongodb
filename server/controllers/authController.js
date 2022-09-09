@@ -1,5 +1,4 @@
 import { User } from "../models/userModel.js";
-import bcrypt from 'bcrypt';
 import { generateAccessToken } from "../middlewares/authen.js";
 
 
@@ -17,17 +16,14 @@ const authController = {
                     });
                 }
                 else {
-                    bcrypt.hash(password, 10, (err, hash) => {
-                        if(err) { return next(err);}
                         const user = new User(req.body);
                         user.role = 'Admin';
-                        user.password = hash;
+                        user.password = req.body.password;
                         user.save((err, result) => {
                             if(err) { return res.status(404).json({err}) }
                             res.status(200).json({data: result});
                         })
-                    });
-                }
+                    }
             })
         } catch (error) {
             res.status(500).json(error);
@@ -39,7 +35,7 @@ const authController = {
             const password = req.body.password;
             User.findOne({username: username}, (error, data) => {
                 if(data) {
-                    if(bcrypt.compareSync(password, data.password)) {
+                    if(password, data.password) {
                         const {token, refreshToken} = generateAccessToken(username);
                         data.access_token = token;
                         res.status(200).json({
