@@ -7,9 +7,11 @@ export const swaggerOptions = {
     },
     servers: [
       {
-        url: `http://localhost:${process.env.PORT}`
+        url: `http://localhost:${process.env.PORT || 3000}`
       }
     ],
+    host: 'computershop1234.herokuapp.com',
+    schemes: ['http'],
     components: {
       securitySchemes: {
         bearerAuth: {
