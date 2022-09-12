@@ -6,14 +6,19 @@ const productController = {
         const pageSize = parseInt(req.body.pageSize);
         const sortPrice = req.body.sort.price;
         const searchName = req.body.filter.name;
-        const inPrice = req.body.inPrice
+        const inPrice = req.body.sort.inPrice
         let number;
+        console.log(inPrice);
         if(sortPrice === 'desc') {
             number = -1;
         } else number = 1;
             await Product.find(
                 {
-                    name: {'$regex': searchName, $options:'i'}
+                    name: {'$regex': searchName, $options:'i'},
+                    price: {
+                        "$gte": inPrice[0],
+                        "$lte": inPrice[1],
+                    }
                 })
                 .select('')
                 .limit(pageSize)

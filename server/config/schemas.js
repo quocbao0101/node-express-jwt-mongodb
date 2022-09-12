@@ -114,10 +114,10 @@
      *                  properties:
      *                      price: 
      *                          type: string
-     *              inPrice:
-     *                  type: array
-     *                  items:
-     *                      type: integer
+     *                      inPrice:
+     *                          type: array
+     *                          items:
+     *                              type: number
      */
     /**
      * @swagger
