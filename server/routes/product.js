@@ -6,6 +6,6 @@ const router = express.Router();
 
     router.post("/pagination", productController.getProductPagination);
     router.post("/", productController.addProduct);
-    // router.get("/", productController);
+    router.get("/", productController.getProduct);
 
 export default router;

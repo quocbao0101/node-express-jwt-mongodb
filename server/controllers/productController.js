@@ -39,14 +39,14 @@ const productController = {
                     })
                 })
     },
-    // getProduct: async(req, res) => {
-    //     try {
-    //         const product = await Product.find();
-    //         res.status(200).json(product); 
-    //     } catch (error) {
-    //         res.status(500).json(error);
-    //     }
-    // },
+    getProduct: async(req, res) => {
+        try {
+            const product = await Product.find();
+            res.status(200).json(product); 
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
     addProduct: async(req, res) => {
         try {
             const product = new Product(req.body);
