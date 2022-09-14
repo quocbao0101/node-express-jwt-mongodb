@@ -5,12 +5,15 @@
      *      CreateUserInput:
      *          type: object
      *          required:
+     *              - email
      *              - username
      *              - password
      *              - name
      *              - gender
      *              - phone
      *          properties:
+     *              email: 
+     *                  type: string
      *              username:
      *                  type: string
      *              password:
@@ -34,10 +37,13 @@
      *          required:
      *              - name
      *              - image
+     *              - link
      *          properties:
      *              name:
      *                  type: string
      *              image:
+     *                  type: string
+     *              link: 
      *                  type: string
      */
     /**
@@ -71,10 +77,10 @@
      *  schemas:
      *      SigninInput:
      *          required:
-     *              - username
+     *              - email
      *              - password
      *          properties:
-     *              username:
+     *              email:
      *                  type: string
      *              password:
      *                  type: string
@@ -133,6 +139,10 @@
      *              - image
      *              - noti
      *              - contact
+     *              - brand
+     *              - memory
+     *              - fan
+     *              - color
      *          properties:
      *              name:
      *                  type: string
@@ -156,4 +166,29 @@
      *                  type: string
      *              contact:
      *                  type: boolean
+     *              brand:
+     *                  type: string
+     *              memory:
+     *                  type: number
+     *              fan:
+     *                  type: number
+     *              color:
+     *                  type: string
+     */
+
+
+    /** 
+     * @swagger
+     * components:
+     *  schemas:
+     *      brandInput:
+     *          required:
+     *              - brand
+     *              - gpu
+     *              - memory
+     *              - fan
+     *              - colors
+     *          properties:
+     *              brand:
+     *                  type: string
      */

@@ -26,6 +26,18 @@ const productSchema = Schema({
     },
     contact: {
         type: Boolean,
+    },
+    brand: {
+        type: String,
+    },
+    memory: {
+        type: Number,
+    },
+    fan: {
+        type: Number,
+    },
+    color: {
+        type: String
     }
 },
 {

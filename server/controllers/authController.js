@@ -6,14 +6,14 @@ import { generateAccessToken } from "../middlewares/authen.js";
 const authController = {
     register: async(req, res, next) => {
         try {
-            const username = req.body.username;
+            const email = req.body.email;
             const password = req.body.password;
-            User.findOne({ username: username }, (error, user) => 
+            User.findOne({ email: email }, (error, user) => 
             {
                 if(user) {
                     res.status(400).json({
                         status: 404,
-                        message: 'User has been used'
+                        message: 'Email has been used'
                     });
                 }
                 else {
@@ -35,12 +35,12 @@ const authController = {
     },
     login: async(req,res) => {
         try {
-            const username = req.body.username;
+            const email = req.body.email;
             const password = req.body.password;
-            User.findOne({username: username}, (error, data) => {
+            User.findOne({email: email}, (error, data) => {
                 if(data) {
                     if(bcrypt.compareSync(password, data.password)) {
-                        const {token, refreshToken} = generateAccessToken(username);
+                        const {token, refreshToken} = generateAccessToken(email);
                         data.access_token = token;
                         res.status(200).json({
                             status: 'success',

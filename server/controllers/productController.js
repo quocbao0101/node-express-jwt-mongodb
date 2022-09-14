@@ -1,4 +1,5 @@
-import { Product } from "../models/productModel.js";
+import { CategoryGraphic } from "../models/card-man-hinh/categoryGraphic.js";
+import { Product } from "../models/card-man-hinh/productModel.js";
 
 const productController = {
     getProductPagination: async(req, res, next) => {
@@ -57,6 +58,14 @@ const productController = {
             const product = new Product(req.body);
             const saveProduct = await product.save();
             res.status(200).json(saveProduct); 
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
+    getCategoryGraphic: async(req,res) => {
+        try {
+            const category = await CategoryGraphic.find();
+            res.status(200).json(category); 
         } catch (error) {
             res.status(500).json(error);
         }

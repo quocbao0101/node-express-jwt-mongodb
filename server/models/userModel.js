@@ -13,6 +13,9 @@ const { Schema } = mongoose;
     )
     const userSchema = Schema(
         {
+            email: {
+                type: String,
+            },
             username: {
                 type: String,
             },
