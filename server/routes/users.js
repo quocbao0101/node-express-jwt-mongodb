@@ -12,4 +12,5 @@ const router = express.Router();
 
     router.delete("/",authenticateToken, userController.deleteUser);
 
+    router.post("/search", userController.searchUser);
 export default router;

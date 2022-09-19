@@ -20,6 +20,21 @@ const userController = {
             res.status(500).json(error);
         }
     },
+    searchUser: async(req, res) => {
+        const username = req.body.username;
+        const email = req.body.email;
+        try {
+            User.find( { 
+                $or:[ {'username':username}, {'email':email }, ]
+            }, function(err, docs) {
+                if(!err) {
+                    res.send(docs);
+                }
+            });
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
     getUserbyID: async(req, res) => {
         try {
             const { id } = req.params;

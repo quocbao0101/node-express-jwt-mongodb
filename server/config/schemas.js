@@ -86,6 +86,22 @@
      *                  type: string
      */
 
+
+    /** 
+     * @swagger
+     * components:
+     *  schemas:
+     *      SearchUser:
+     *          required:
+     *              - username
+     *              - email
+     *          properties:
+     *              username:
+     *                  type: string
+     *              email:
+     *                  type: string
+     */
+
     /**
      * components:
      *   responses:

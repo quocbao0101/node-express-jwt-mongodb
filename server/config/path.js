@@ -64,6 +64,28 @@
         *              $ref: '#/components/schemas/CreateUserInput'
         */
 
+
+        // SEARCH USER
+        /**
+        * @swagger
+        * /api/users/search:
+        *  post:
+        *    tags:
+        *    - user-controller
+        *    requestBody:
+        *       required: true
+        *       content:
+        *           application/json:
+        *               schema:
+        *                   $ref: '#/components/schemas/SearchUser'
+        *    responses:
+        *      '200':
+        *        description: OK
+        *        content:
+        *           application/json:
+        *             schema:
+        *              $ref: '#/components/schemas/CreateUserInput'
+        */
         // DELETE USER
                 /**
         * @swagger
